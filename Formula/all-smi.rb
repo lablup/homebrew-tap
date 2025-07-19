@@ -27,6 +27,7 @@ class AllSmi < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/all-smi --version")
+    output = shell_output("#{bin}/all-smi --version")
+    assert_match(/all-smi\s+#{version}/, output)
   end
 end
