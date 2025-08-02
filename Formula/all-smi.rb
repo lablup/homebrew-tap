@@ -1,7 +1,7 @@
 class AllSmi < Formula
   desc      "GPU ‘top’ for NVIDIA/Jetson/Apple Silicon/Tenstorrent"
   homepage  "https://github.com/inureyes/all-smi"
-  version "v0.7.0"
+  version "0.7.0"
   license   "MIT"
 
   on_macos do
