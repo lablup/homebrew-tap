@@ -24,6 +24,7 @@ class AllSmi < Formula
 
   def install
     bin.install "all-smi"
+    man1.install "all-smi.1"
   end
 
   test do
