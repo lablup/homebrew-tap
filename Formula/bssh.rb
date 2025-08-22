@@ -14,7 +14,7 @@ class Bssh < Formula
   on_linux do
     if Hardware::CPU.arm?
       url      "https://github.com/lablup/bssh/releases/download/v0.3.0/bssh-linux-aarch64.tar.gz"
-      sha256.  "19b3ff4976dc3a80c55497687e5f84ae075788eb2abe536fb45f6f308bebb9ff"
+      sha256   "19b3ff4976dc3a80c55497687e5f84ae075788eb2abe536fb45f6f308bebb9ff"
     end
     if Hardware::CPU.intel?
       url      "https://github.com/lablup/bssh/releases/download/v0.3.0/bssh-linux-x86_64.tar.gz"
