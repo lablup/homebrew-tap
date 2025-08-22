@@ -1,14 +1,9 @@
 class AllSmi < Formula
   desc      "GPU ‘top’ for NVIDIA/Jetson/Apple Silicon/Tenstorrent"
   homepage  "https://github.com/inureyes/all-smi"
-<<<<<<< HEAD
   version "0.8.0"
-  license   "MIT"
-=======
-  version "0.7.1"
   license   "Apache-2.0"
->>>>>>> 84f74d6 (add: bssh)
-
+  
   on_macos do
     if Hardware::CPU.arm?
       url     "https://github.com/inureyes/all-smi/releases/download/v0.8.0/all-smi-macos-aarch64.zip"
