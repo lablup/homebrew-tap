@@ -24,6 +24,7 @@ class Bssh < Formula
 
   def install
     bin.install "bssh"
+    man1.install "bssh.1"
   end
 
   test do
