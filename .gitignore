@@ -1,0 +1,101 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+*.sublime-project
+
+# Vim
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+Session.vim
+Sessionx.vim
+.netrwhist
+tags
+[._]*.un~
+
+# Homebrew specific
+*.bottle.*
+*.bottle.tar.gz
+downloads/
+cache/
+
+# Testing artifacts
+test/
+tmp/
+temp/
+*.log
+*.tmp
+
+# Build artifacts
+build/
+dist/
+*.tar.gz
+*.zip
+*.dmg
+
+# Ruby/Bundler
+*.gem
+*.rbc
+/.config
+/coverage/
+/InstalledFiles
+/pkg/
+/spec/reports/
+/spec/examples.txt
+/test/tmp/
+/test/version_tmp/
+/tmp/
+.bundle/
+.rvmrc
+Gemfile.lock
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Documentation build artifacts
+/doc/
+/rdoc/
+/.yardoc/
+/_yardoc/
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Custom/Local files
+local/
+.local/
+*.local
