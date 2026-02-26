@@ -1,4 +1,4 @@
-cask "bgo" do
+cask "backend-ai-go" do
   version "1.2.2"
   sha256 "f914658c8b93749b6fa1d7ba784978e27f33ab435973386a69e71ddcddbb42df"
 
