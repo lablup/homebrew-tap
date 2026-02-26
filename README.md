@@ -1,6 +1,16 @@
 # Lablup Homebrew Tap
 
-A collection of Homebrew formulae for Lablup software and tools, providing easy installation of high-performance computing and cluster management utilities.
+A collection of Homebrew formulae and casks for Lablup software and tools, providing easy installation of high-performance computing, cluster management, and AI/ML utilities.
+
+## Available Casks
+
+### 🚀 backend-ai-go
+**Cross-platform LLM serving desktop application**
+- Local inference using llama.cpp and Apple MLX
+- Hugging Face model search and download (GGUF, MLX formats)
+- OpenAI-compatible API server
+- macOS Apple Silicon (arm64)
+- [Project Repository](https://github.com/lablup/backend.ai-go-releases)
 
 ## Available Formulae
 
@@ -26,7 +36,10 @@ A collection of Homebrew formulae for Lablup software and tools, providing easy 
 # Add the Lablup tap to your Homebrew
 brew tap lablup/tap
 
-# Install individual formulae
+# Install casks (desktop applications)
+brew install --cask lablup/tap/backend-ai-go
+
+# Install formulae (CLI tools)
 brew install lablup/tap/all-smi
 brew install lablup/tap/bssh
 ```
@@ -34,7 +47,8 @@ brew install lablup/tap/bssh
 ### Alternative Installation (without tap)
 
 ```bash
-# Install directly using the full formula path
+# Install directly using the full path
+brew install --cask lablup/tap/backend-ai-go
 brew install lablup/tap/all-smi
 brew install lablup/tap/bssh
 ```
@@ -166,6 +180,7 @@ This tap repository is licensed under the Apache License 2.0. Individual softwar
 
 For issues related to:
 - **This tap**: [Open an issue here](https://github.com/lablup/homebrew-tap/issues)
+- **Backend.AI GO**: [Backend.AI GO issues](https://github.com/lablup/backend.ai-go-releases/issues)
 - **all-smi**: [all-smi issues](https://github.com/inureyes/all-smi/issues)
 - **bssh**: [bssh issues](https://github.com/lablup/bssh/issues)
 
