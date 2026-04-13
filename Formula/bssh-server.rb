@@ -7,18 +7,18 @@ class BsshServer < Formula
   on_macos do
     if Hardware::CPU.arm?
       url     "https://github.com/lablup/bssh/releases/download/v2.0.0/bssh-server-macos-aarch64.zip"
-      sha256 "0dc9b9ad00b27ae7dd1267fab433a0fb5059d958d6051ac3298817a1201776bc"
+      sha256 "0c53faa4e617ca996581e73260b26d610ded5ac05e99fccaff104d56c3fee74d"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url      "https://github.com/lablup/bssh/releases/download/v2.0.0/bssh-server-linux-aarch64.tar.gz"
-      sha256 "768b01fe874ed039718906facfd23b8b1ffa56bb1fa266420ffa1634d5f7bfe3"
+      sha256 "7b1809a5ec29be3c5132831710a1f3ee6fce4994e8af644cdfeee09f778001ca"
     end
     if Hardware::CPU.intel?
       url      "https://github.com/lablup/bssh/releases/download/v2.0.0/bssh-server-linux-x86_64.tar.gz"
-      sha256 "bd8f34d9d71516a0e288ae41499154957458801e80b4f60e91f5f9a132d94938"
+      sha256 "68c31554fa29a4e37421a90ecd7b894dce5d87fbdab375a1f953f10f901f9421"
     end
   end
 
