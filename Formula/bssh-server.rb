@@ -24,6 +24,7 @@ class BsshServer < Formula
 
   def install
     bin.install "bssh-server"
+    man8.install "bssh-server.8"
   end
 
   test do
