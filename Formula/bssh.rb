@@ -1,24 +1,24 @@
 class Bssh < Formula
   desc      "Parallel SSH command execution tool for cluster management"
   homepage  "https://github.com/lablup/bssh"
-  version "2.0.0"
+  version "2.0.1"
   license   "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url     "https://github.com/lablup/bssh/releases/download/v2.0.0/bssh-macos-aarch64.zip"
-      sha256 "0e3b25de7ea0ab5523f5076e377b7c64f1a165b93be4a2dcd70b66a3f1889a0f"
+      url     "https://github.com/lablup/bssh/releases/download/v2.0.1/bssh-macos-aarch64.zip"
+      sha256 "f9bd0ff0f3f491adeb7fb9b9cc408afc86efa1d59c50fe2caf8c00210892c4cd"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url      "https://github.com/lablup/bssh/releases/download/v2.0.0/bssh-linux-aarch64.tar.gz"
-      sha256 "932134a8856ba5ab1fac2125f2b745eae4584cf830c8bd091162484bdbae00d4"
+      url      "https://github.com/lablup/bssh/releases/download/v2.0.1/bssh-linux-aarch64.tar.gz"
+      sha256 "3a72951ab415ae15a9566478258efd42d8b1ba938a55e401e52e18c1e6d703b6"
     end
     if Hardware::CPU.intel?
-      url      "https://github.com/lablup/bssh/releases/download/v2.0.0/bssh-linux-x86_64.tar.gz"
-      sha256 "9b31749cf4de9ffe33d32b6b56087f773f7cb3952032942a42087fc41d7f4ee5"
+      url      "https://github.com/lablup/bssh/releases/download/v2.0.1/bssh-linux-x86_64.tar.gz"
+      sha256 "a3ad633b7960df536adf7e5bbabc00743a92d89be5cf9248f60b480353a08164"
     end
   end
 
