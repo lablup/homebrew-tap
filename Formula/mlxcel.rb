@@ -14,10 +14,7 @@ class Mlxcel < Formula
   on_macos do
     if Hardware::CPU.arm?
       url     "https://github.com/lablup/mlxcel/releases/download/v0.0.27/mlxcel-macos-aarch64.zip"
-      # Placeholder SHA256 — populated by lablup/mlxcel's
-      # update_homebrew_formula.yml on the first release publish after this
-      # formula lands.
-      sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+      sha256 "6961e9c37229378830fa594e86fb69d538e97e5041e011c636401b2fc7238f27"
     end
   end
 
