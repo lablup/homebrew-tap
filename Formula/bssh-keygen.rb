@@ -1,24 +1,24 @@
 class BsshKeygen < Formula
   desc      "SSH key generator utility for bssh (part of bssh project)"
   homepage  "https://github.com/lablup/bssh"
-  version "2.2.1"
+  version "2.2.2"
   license   "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url     "https://github.com/lablup/bssh/releases/download/v2.2.1/bssh-keygen-macos-aarch64.zip"
-      sha256 "8187597485ed7ebd157a648312c8fb1b166edc07e7213bf872027c99a3faa4aa"
+      url     "https://github.com/lablup/bssh/releases/download/v2.2.2/bssh-keygen-macos-aarch64.zip"
+      sha256 "bd5e4e56d5533f6d980e4ed137a29fcee2abe0fb9db793a13101e3fbed5ae512"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url      "https://github.com/lablup/bssh/releases/download/v2.2.1/bssh-keygen-linux-aarch64.tar.gz"
-      sha256 "9db287c7a0ba0844c7be164ffb72ce8b63071df7f1163845c1d0fe0e089a1789"
+      url      "https://github.com/lablup/bssh/releases/download/v2.2.2/bssh-keygen-linux-aarch64.tar.gz"
+      sha256 "8a6c8700bf141c133584066bf422906b928640d3bc1776df8c629a78559ef3fc"
     end
     if Hardware::CPU.intel?
-      url      "https://github.com/lablup/bssh/releases/download/v2.2.1/bssh-keygen-linux-x86_64.tar.gz"
-      sha256 "29c853be1a1c8396025e15c94d876d69989ef9772276f91eb7cb0b4a048450ea"
+      url      "https://github.com/lablup/bssh/releases/download/v2.2.2/bssh-keygen-linux-x86_64.tar.gz"
+      sha256 "109303f84cf39ba537767984ad93ba2d38ce45be33b75c2c4b328c4c44f3fdc8"
     end
   end
 
