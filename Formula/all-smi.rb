@@ -1,24 +1,24 @@
 class AllSmi < Formula
   desc      "GPU ‘top’ for NVIDIA/Jetson/Apple Silicon/Tenstorrent"
   homepage  "https://github.com/lablup/all-smi"
-  version "0.20.1"
+  version "0.21.0"
   license   "Apache-2.0"
   
   on_macos do
     if Hardware::CPU.arm?
-      url     "https://github.com/inureyes/all-smi/releases/download/v0.20.1/all-smi-macos-aarch64.zip"
-      sha256 "f65c79baa22577bfc28d7a477b06c3ded17245863b7ccf1f25102b53cd07fd1b"
+      url     "https://github.com/inureyes/all-smi/releases/download/v0.21.0/all-smi-macos-aarch64.zip"
+      sha256 "1532f8f60d62b59ed1112120e117c34c6676f83f38600c8cb0350bd2d81d5852"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url      "https://github.com/inureyes/all-smi/releases/download/v0.20.1/all-smi-linux-aarch64.tar.gz"
-      sha256 "bb25a41ec7d6ee83f752ba6c3bf9211cdb4129849db7d6e611395686b66a28cf"
+      url      "https://github.com/inureyes/all-smi/releases/download/v0.21.0/all-smi-linux-aarch64.tar.gz"
+      sha256 "ed495c636a506aa0a70a0e3dfb5fd90ce4fd5f9377ae8853e8784943a5b0945f"
     end
     if Hardware::CPU.intel?
-      url      "https://github.com/inureyes/all-smi/releases/download/v0.20.1/all-smi-linux-x86_64.tar.gz"
-      sha256 "9efd2461f7f60b0c456a27c262067178d1004de8babd0e601759dc7695d8bb64"
+      url      "https://github.com/inureyes/all-smi/releases/download/v0.21.0/all-smi-linux-x86_64.tar.gz"
+      sha256 "cb9de8fa4590e0974a4ff48842f2164f8b0ae4bdc7bc66ca181147c64ab42bb7"
     end
   end
 
