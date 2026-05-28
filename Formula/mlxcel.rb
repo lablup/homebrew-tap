@@ -1,7 +1,7 @@
 class Mlxcel < Formula
   desc      "MLX inference engine for Apple Silicon (Rust + native MLX C++ bindings)"
   homepage  "https://github.com/lablup/mlxcel"
-  version "0.0.30"
+  version "0.1.0"
   license   "Apache-2.0"
 
   # Release artifacts are built with MACOSX_DEPLOYMENT_TARGET=14.0 and target
@@ -13,8 +13,8 @@ class Mlxcel < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url     "https://github.com/lablup/mlxcel/releases/download/v0.0.30/mlxcel-macos-aarch64.zip"
-      sha256 "785abea3bb1527afdc72910c313f450c2678d2cd525a9c0a520c0642fa2f5589"
+      url     "https://github.com/lablup/mlxcel/releases/download/v0.1.0/mlxcel-macos-aarch64.zip"
+      sha256 "7bde3227d76bf6cc835e841fa162901ba0ed2651564ecb588d47822a5ae1f98d"
     end
   end
 
