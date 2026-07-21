@@ -1,24 +1,24 @@
 class AigoServer < Formula
   desc      "Headless OpenAI-compatible LLM serving server for Backend.AI GO"
   homepage  "https://github.com/lablup/backend.ai-go"
-  version "1.10.0"
+  version "1.10.2"
   license   "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.arm?
       url     "https://github.com/lablup/backend.ai-go-releases/releases/download/v#{version}/aigo-server-macos-aarch64.zip"
-      sha256 "4f1376485ec5836693efc9723977ccd5a8921b48ee700ea22d389182a7840fee"
+      sha256 "9ca3743bb30852d47b220d60980adac03776645888b21a83df63689fd3bd71f4"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url      "https://github.com/lablup/backend.ai-go-releases/releases/download/v#{version}/aigo-server-linux-aarch64.tar.gz"
-      sha256 "9210238cf69c40e28653b5e77fd43cd933aca99dd4407fbca8b93a5f0ccf510e"
+      sha256 "c828e63eeb9a3f881a25f2ac67bb3e144ebc16e69b6c0ed4727280f443332cc8"
     end
     if Hardware::CPU.intel?
       url      "https://github.com/lablup/backend.ai-go-releases/releases/download/v#{version}/aigo-server-linux-x86_64.tar.gz"
-      sha256 "68d7e25776fd636946ab54d8c8f35c57581dc9ef571e227d4628787762978bb6"
+      sha256 "df498c5748400120b78c3f882c7cc74cdc24f8085df9c6956761e3881106a2f7"
     end
   end
 
