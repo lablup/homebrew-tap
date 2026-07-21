@@ -1,6 +1,6 @@
 cask "backend-ai-go" do
-  version "1.10.0"
-  sha256 "3c234d999c60e54a83e60c828bed69a62501bb5f7a7c6ab81b9ba3c44e09ee5b"
+  version "1.10.2"
+  sha256 "23c31e08d8472599477fcc3035a6d88bd2c2d22832c1522765b6c0c6372bf62e"
 
   url "https://github.com/lablup/backend.ai-go-releases/releases/download/v#{version}/backend-ai-go-#{version}-macos-arm64.dmg"
   name "Backend.AI GO"
