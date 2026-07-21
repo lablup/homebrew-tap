@@ -1,24 +1,24 @@
 class BsshServer < Formula
   desc      "Lightweight SSH server for containers (part of bssh project)"
   homepage  "https://github.com/lablup/bssh"
-  version "2.2.3"
+  version "2.3.0"
   license   "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url     "https://github.com/lablup/bssh/releases/download/v2.2.3/bssh-server-macos-aarch64.zip"
-      sha256 "5f1d1198ea96745b451617c4248f864c760095250df4cffc5d1139f32ca68848"
+      url     "https://github.com/lablup/bssh/releases/download/v2.3.0/bssh-server-macos-aarch64.zip"
+      sha256 "e7455a422c8e5db126600422e905208367f0bceb4bb974cc4bb501f1f8e6063b"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url      "https://github.com/lablup/bssh/releases/download/v2.2.3/bssh-server-linux-aarch64.tar.gz"
-      sha256 "2f1504a7fa28600365ba8c6e1c10f3d526a1c4bc59ebdca0164803bcd6c97f59"
+      url      "https://github.com/lablup/bssh/releases/download/v2.3.0/bssh-server-linux-aarch64.tar.gz"
+      sha256 "e4f1469158d0f0c8c2c6481721229934dfae16d0a834f1abfc4ba7d32762a390"
     end
     if Hardware::CPU.intel?
-      url      "https://github.com/lablup/bssh/releases/download/v2.2.3/bssh-server-linux-x86_64.tar.gz"
-      sha256 "1ab72e56c137a5d3201cec6b1b1a22ff38b948005601a665952bce2fa88d7688"
+      url      "https://github.com/lablup/bssh/releases/download/v2.3.0/bssh-server-linux-x86_64.tar.gz"
+      sha256 "a34d88b53f9b31bd1dcddbb8204e476834a88e64dcb776e0b7da01485e605d91"
     end
   end
 
