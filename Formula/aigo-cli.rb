@@ -7,18 +7,18 @@ class AigoCli < Formula
   on_macos do
     if Hardware::CPU.arm?
       url     "https://github.com/lablup/backend.ai-go-releases/releases/download/v#{version}/aigo-cli-macos-aarch64.zip"
-      sha256 "88369889f79c08640f4bfddad257620e523b8c82880b655eaf911b61e4ae58e9"
+      sha256 "1ab79f7d30f06999131eede50f25d88e250ed1b5c3329fc4c38d9aba15aaf054"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url      "https://github.com/lablup/backend.ai-go-releases/releases/download/v#{version}/aigo-cli-linux-aarch64.tar.gz"
-      sha256 "2046505ab2405f7491e8f17fb2290cddbaca9a6fafa185359f44d218119bb5d0"
+      sha256 "7630f32aa9a8c396f222c74c7549720e4c0963218d06189b28c9e61e06034e0e"
     end
     if Hardware::CPU.intel?
       url      "https://github.com/lablup/backend.ai-go-releases/releases/download/v#{version}/aigo-cli-linux-x86_64.tar.gz"
-      sha256 "ce4ee107ba7db076b13ba0f804273c8401a659d3703a0efb6b59d259d4aee9d8"
+      sha256 "4059cdef113ad249fb3867c7eaa3b38616981dc884078f31adfb4009ad3db56b"
     end
   end
 
