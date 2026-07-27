@@ -1,0 +1,113 @@
+name: CI
+
+# Every formula and cask in this tap is written by a release bot in another
+# repository, pushing straight to main. Nothing ran here to check the result.
+#
+# In July 2026 that cost us twice. A bot regenerated Casks/backend-ai-go.rb
+# from a stale template and reintroduced a `depends_on macos:` deprecation
+# that printed on every `brew update` (10facb2). A second bot rewrote
+# Formula/mlxcel.rb by line position, dropped its version stanza and left two
+# sha256 lines, so `brew install mlxcel` failed on checksum for three days
+# before anyone noticed (9969ec4).
+#
+# The generators are fixed, but they are not the last word: this tap accepts
+# pushes from four separate repositories and will accept more. These checks are
+# the backstop that does not depend on any of them getting it right.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+# Default-deny; the job only reads the repository.
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: Validate tap
+    # macOS because casks only load here, and `brew style` applies its cask
+    # cops on this platform.
+    runs-on: macos-latest
+
+    steps:
+      - name: Check out tap
+        uses: actions/checkout@v6
+        with:
+          path: tap
+
+      - name: Install tap into Homebrew
+        run: |
+          set -euo pipefail
+          # `brew style`, `readall` and `audit` all take a tap name, which only
+          # resolves under Homebrew's Taps directory. Formula cops likewise only
+          # apply to paths beneath a Formula directory.
+          TAP_DIR="$(brew --repository)/Library/Taps/lablup/homebrew-tap"
+          mkdir -p "$(dirname "$TAP_DIR")"
+          cp -R "${GITHUB_WORKSPACE}/tap" "$TAP_DIR"
+          echo "TAP_DIR=$TAP_DIR" >> "$GITHUB_ENV"
+          ls "$TAP_DIR/Formula" "$TAP_DIR/Casks"
+
+      - name: Structural sanity
+        working-directory: ${{ env.TAP_DIR }}
+        run: |
+          # `brew style` caught the mlxcel corruption only because the stray
+          # sha256 landed at the wrong indent. A correctly indented duplicate
+          # would pass every other check here: valid Ruby, loads fine, ignored
+          # by audit. So assert the invariant directly.
+          set -uo pipefail
+          status=0
+
+          for file in Formula/*.rb Casks/*.rb; do
+            [ -e "$file" ] || continue
+
+            versions=$(grep -c "^[[:space:]]*version " "$file" || true)
+            urls=$(grep -c "^[[:space:]]*url " "$file" || true)
+            shas=$(grep -c "^[[:space:]]*sha256 " "$file" || true)
+
+            if [ "$versions" -ne 1 ]; then
+              echo "::error file=${file}::Expected exactly one version stanza, found ${versions}."
+              status=1
+            fi
+            if [ "$urls" -ne "$shas" ]; then
+              echo "::error file=${file}::Expected url and sha256 stanzas to pair up, found ${urls} url and ${shas} sha256."
+              status=1
+            fi
+            if [ "$urls" -eq 0 ]; then
+              echo "::error file=${file}::No url stanza found."
+              status=1
+            fi
+
+            echo "  ${file}: ${versions} version, ${urls} url, ${shas} sha256"
+          done
+
+          exit $status
+
+      - name: brew style
+        run: brew style lablup/tap
+
+      - name: brew readall
+        env:
+          # Without this, a deprecated call only prints a warning and readall
+          # exits 0, which is exactly how the `depends_on macos:` regression
+          # survived. HOMEBREW_DEVELOPER turns deprecations into failures.
+          HOMEBREW_DEVELOPER: 1
+        run: brew readall --aliases lablup/tap
+
+      - name: brew audit
+        # Worth stating plainly: replaying the July breakage, audit passed both
+        # times. It suppresses deprecation warnings while auditing, and a
+        # duplicate sha256 is not an offense to it. The three steps above are
+        # what actually caught those. Audit stays for the classes it does cover,
+        # such as the missing `verified:` on a cask whose download host differs
+        # from its homepage.
+        #
+        # Offline only. `--online` adds homepage reachability and download
+        # checks that fail on unrelated outages, which would train everyone to
+        # ignore a red build.
+        run: brew audit --strict --tap=lablup/tap
