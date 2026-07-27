@@ -2,12 +2,13 @@ cask "backend-ai-go" do
   version "1.11.1"
   sha256 "c98865ea4b69842092a27f2c7bfe682efa03e5471ee1c393e275bc6e38e50f63"
 
-  url "https://github.com/lablup/backend.ai-go-releases/releases/download/v#{version}/backend-ai-go-#{version}-macos-arm64.dmg"
+  url "https://github.com/lablup/backend.ai-go-releases/releases/download/v#{version}/backend-ai-go-#{version}-macos-arm64.dmg",
+      verified: "github.com/lablup/backend.ai-go-releases/"
   name "Backend.AI GO"
-  desc "Cross-platform LLM serving desktop application"
-  homepage "https://backendai.io"
+  desc "Agentic workflow platform with a cross-platform LLM serving"
+  homepage "https://go.backend.ai/"
 
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "Backend.AI GO.app"
 
