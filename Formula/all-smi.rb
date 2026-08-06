@@ -27,6 +27,14 @@ class AllSmi < Formula
     man1.install "all-smi.1"
   end
 
+  service do
+    run [opt_bin/"all-smi", "api"]
+    keep_alive true
+    log_path var/"log/all-smi.log"
+    error_log_path var/"log/all-smi.log"
+    process_type :background
+  end
+
   test do
     output = shell_output("#{bin}/all-smi --version")
     assert_match(/all-smi\s+#{version}/, output)
