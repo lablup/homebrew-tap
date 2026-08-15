@@ -1,9 +1,9 @@
 class Mlxcel < Formula
   desc      "MLX inference engine for Apple Silicon (Rust + native MLX C++ bindings)"
   homepage  "https://github.com/lablup/mlxcel"
-  url "https://github.com/lablup/mlxcel/releases/download/v0.4.3/mlxcel-macos-aarch64.zip"
-  version "0.4.3"
-  sha256 "dea8a5c2dc4f6e68c682328fa3289054a397621af29fa3529e823f7be6a3d4ae"
+  url "https://github.com/lablup/mlxcel/releases/download/v0.5.1/mlxcel-macos-aarch64.zip"
+  version "0.5.1"
+  sha256 "088b1f16d7b8a13494cd7425251e87a3bb79a54ee9058d68a300d6bbfe3eb6d5"
   license "Apache-2.0"
 
   # This formula packages only the aarch64-apple-darwin artifact, which is built
