@@ -3,7 +3,7 @@ class Mlxcel < Formula
   homepage  "https://github.com/lablup/mlxcel"
   url "https://github.com/lablup/mlxcel/releases/download/v0.5.2/mlxcel-macos-aarch64.zip"
   version "0.5.2"
-  sha256 "710309de68b9db039e7eac7d2a7a97275fc5398221931a786f7fd77fc4c4110c"
+  sha256 "e95b365d14bbeaa15f1fd35c8845de6e6e4060814153f7691e5d2b52dda45054"
   license "Apache-2.0"
 
   # This formula packages only the aarch64-apple-darwin artifact, which is built
