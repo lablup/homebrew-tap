@@ -9,6 +9,10 @@ class AllSmi < Formula
       url "https://github.com/lablup/all-smi/releases/download/v0.26.0/all-smi-macos-aarch64.zip"
       sha256 "cf04da77ed982f646fa8d3103b18bc81e82526a83e97d5fa7c3d6bad2a78bdbd"
     end
+    if Hardware::CPU.intel?
+      url "https://github.com/lablup/all-smi/releases/download/v0.26.0/all-smi-macos-x86_64.zip"
+      sha256 "7bd6ab7773f83c4b9e0be93c4dee0ea51217a1e157e85b59811d2e7a43a52fc0"
+    end
   end
 
   on_linux do
