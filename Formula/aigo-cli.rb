@@ -5,8 +5,8 @@ class AigoCli < Formula
   license "Apache-2.0"
 
   on_macos do
-    depends_on macos: :sequoia
     depends_on arch: :arm64
+    depends_on macos: :sequoia
     if Hardware::CPU.arm?
       url "https://github.com/lablup/backend.ai-go-releases/releases/download/v#{version}/aigo-cli-macos-aarch64.zip"
       sha256 "f311986e22f92ff64272362ab8481b0957890c861df2a460c5cbee1f064942bc"
