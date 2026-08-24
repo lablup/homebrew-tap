@@ -5,8 +5,8 @@ class AigoServer < Formula
   license "Apache-2.0"
 
   on_macos do
-    depends_on macos: :sequoia
     depends_on arch: :arm64
+    depends_on macos: :sequoia
     if Hardware::CPU.arm?
       url "https://github.com/lablup/backend.ai-go-releases/releases/download/v#{version}/aigo-server-macos-aarch64.zip"
       sha256 "0b9ab0de7b66eea91889377e5639b797176dbc9985fe78b03cf5a593d19368ef"
@@ -38,7 +38,7 @@ class AigoServer < Formula
     # A formula that installed only the server would boot a routing
     # layer that is silently dead, warning once in the log and
     # otherwise looking healthy (issue #4233).
-    assert_predicate bin/"continuum-router", :exist?
-    assert_predicate bin/"model-metadata.yaml", :exist?
+    assert_path_exists bin/"continuum-router"
+    assert_path_exists bin/"model-metadata.yaml"
   end
 end
