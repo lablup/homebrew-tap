@@ -1,17 +1,17 @@
 cask "backend-ai-go" do
-  version "1.13.0"
-  sha256 "15aae92c31a064d2e2bc681ca8c4c5c3994b8c021fadcf7d7cc3edebd51d1bef"
+  version "2.0.0"
+  sha256 "2f0f0ea734137fbf566ba9bf8a99c101d818fb40b2fe304877cb3d18c44cf57d"
 
   url "https://github.com/lablup/backend.ai-go-releases/releases/download/v#{version}/backend-ai-go-#{version}-macos-arm64.dmg",
       verified: "github.com/lablup/backend.ai-go-releases/"
-  name "Backend.AI GO"
+  name "AI:GO"
   desc "Agentic workflow platform with a cross-platform LLM serving"
   homepage "https://go.backend.ai/"
 
   depends_on macos: :sequoia
   depends_on arch: :arm64
 
-  app "Backend.AI GO.app"
+  app "AI-GO.app"
 
   zap trash: [
     "~/Library/Application Support/ai.backend.go",
