@@ -1,7 +1,7 @@
 class AigoCli < Formula
-  desc      "CLI client for Backend.AI GO (manage local LLM models and inference servers)"
+  desc      "CLI client for AI:GO (manage local LLM models and inference servers)"
   homepage  "https://github.com/lablup/backend.ai-go"
-  version "1.13.0"
+  version "2.0.0"
   license "Apache-2.0"
 
   on_macos do
@@ -9,18 +9,18 @@ class AigoCli < Formula
     depends_on macos: :sequoia
     if Hardware::CPU.arm?
       url "https://github.com/lablup/backend.ai-go-releases/releases/download/v#{version}/aigo-cli-macos-aarch64.zip"
-      sha256 "ffb5cd871f4867596f9a71fa05e2c4db87e76c3b7b97a5496482cb463044dced"
+      sha256 "6227b65243ad8898694fc77c415edde2cd937ad98a3c1b5e994eb52cd4b651c8"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/lablup/backend.ai-go-releases/releases/download/v#{version}/aigo-cli-linux-aarch64.tar.gz"
-      sha256 "ad06dd8f76bfbb6fc689fb4102e1e3771080f46416750cfae5ad38708fcb954e"
+      sha256 "13a287bb33d2f301e8fb23b71aff796db4baa698459cf04b3a21f980666c9012"
     end
     if Hardware::CPU.intel?
       url "https://github.com/lablup/backend.ai-go-releases/releases/download/v#{version}/aigo-cli-linux-x86_64.tar.gz"
-      sha256 "6747570626ec5c4ea3ec1bf0e38c7067e45384b06067e0776812655025cf6abd"
+      sha256 "67833887ae0c81a72d44849a5139d4950cbc980bbbc94b94610e4d8aca36f611"
     end
   end
 
