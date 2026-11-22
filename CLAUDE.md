@@ -26,9 +26,11 @@ brew audit --strict ./Formula/<formula-name>.rb
 ```
 
 ### Updating Formula Versions
+Every formula and cask here is rewritten by a release workflow in its source repository (lablup/backend.ai-go, lablup/bssh, lablup/all-smi, lablup/mlxcel). A change made only in this tap is reverted at the next release, so make it in the generator as well.
+
 When updating a formula to a new version:
-1. Update the `version` field in the formula
-2. Update all download URLs to point to the new version
+1. Update all download URLs to point to the new version. Formulae carry no `version` stanza: Homebrew reads the version from the url, and `brew audit` rejects a `version` that repeats it. Add one only when the release tag is one Homebrew misreads, such as `v0.9.0-beta.1`. Casks keep their `version` stanza.
+2. Keep every release url in a formula on the same tag; CI rejects a formula whose urls name different releases.
 3. Update SHA256 checksums for each platform:
    ```bash
    # Get SHA256 for a release file

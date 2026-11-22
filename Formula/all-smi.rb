@@ -1,7 +1,6 @@
 class AllSmi < Formula
   desc      "GPU ‘top’ for NVIDIA/Jetson/Apple Silicon/Tenstorrent"
   homepage  "https://github.com/lablup/all-smi"
-  version "0.28.0"
   license "Apache-2.0"
 
   on_macos do

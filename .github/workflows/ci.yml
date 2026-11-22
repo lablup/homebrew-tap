@@ -75,8 +75,22 @@ jobs:
             urls=$(grep -c "^[[:space:]]*url " "$file" || true)
             shas=$(grep -c "^[[:space:]]*sha256 " "$file" || true)
 
-            if [ "$versions" -ne 1 ]; then
-              echo "::error file=${file}::Expected exactly one version stanza, found ${versions}."
+            # A cask must declare its version. A formula normally must not:
+            # `brew audit` rejects a `version` that only repeats what Homebrew
+            # scans from the url, so the stanza appears only for a release tag
+            # it misreads (it reads `v0.9.0-beta.1` as 64). Its version then
+            # comes from the url, so every release url has to name one tag.
+            case "$file" in
+              Casks/*) max_versions=1 min_versions=1 ;;
+              *)       max_versions=1 min_versions=0 ;;
+            esac
+            if [ "$versions" -lt "$min_versions" ] || [ "$versions" -gt "$max_versions" ]; then
+              echo "::error file=${file}::Expected ${min_versions} to ${max_versions} version stanzas, found ${versions}."
+              status=1
+            fi
+            tags=$(grep -o "/releases/download/[^/\"]*/" "$file" | sort -u | wc -l | tr -d ' ')
+            if [ "$tags" -gt 1 ]; then
+              echo "::error file=${file}::Release urls point at ${tags} different tags; they must all name the same release."
               status=1
             fi
             if [ "$urls" -ne "$shas" ]; then

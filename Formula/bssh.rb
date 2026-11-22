@@ -1,7 +1,6 @@
 class Bssh < Formula
   desc      "Parallel SSH command execution tool for cluster management"
   homepage  "https://github.com/lablup/bssh"
-  version "3.1.3"
   license "Apache-2.0"
 
   on_macos do
