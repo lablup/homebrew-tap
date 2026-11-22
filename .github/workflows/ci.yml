@@ -52,6 +52,11 @@ jobs:
           cp -R "${GITHUB_WORKSPACE}/tap" "$TAP_DIR"
           echo "TAP_DIR=$TAP_DIR" >> "$GITHUB_ENV"
           ls "$TAP_DIR/Formula" "$TAP_DIR/Casks"
+          # Homebrew refuses to load formulae and casks from an untrusted tap.
+          # Without this, readall prints "Skipping lablup/tap because it is not
+          # trusted" and exits 0, so it checked nothing, and audit errors out
+          # before inspecting anything.
+          brew trust lablup/tap
 
       - name: Structural sanity
         working-directory: ${{ env.TAP_DIR }}
