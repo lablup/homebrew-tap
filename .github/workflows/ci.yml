@@ -104,8 +104,10 @@ jobs:
         # times. It suppresses deprecation warnings while auditing, and a
         # duplicate sha256 is not an offense to it. The three steps above are
         # what actually caught those. Audit stays for the classes it does cover,
-        # such as the missing `verified:` on a cask whose download host differs
-        # from its homepage.
+        # such as a `version` stanza that only repeats the one scanned from the
+        # url. (It no longer asks for `verified:` on a cask whose download host
+        # differs from its homepage: Homebrew deprecated that url parameter in
+        # November 2026, and readall above now fails on it.)
         #
         # Offline only. `--online` adds homepage reachability and download
         # checks that fail on unrelated outages, which would train everyone to
