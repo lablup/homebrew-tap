@@ -113,8 +113,8 @@ brew audit --strict ./Formula/<formula>.rb
 
 When updating a formula to a new version:
 
-1. Update the `version` field in the formula file
-2. Update download URLs to point to the new release
+1. Update download URLs to point to the new release. Formulae have no `version` field because Homebrew reads the version from the url; casks keep theirs.
+2. Keep every release url in the formula on the same tag
 3. Update SHA256 checksums:
    ```bash
    # Calculate SHA256 for a release file

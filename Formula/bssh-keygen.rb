@@ -1,7 +1,6 @@
 class BsshKeygen < Formula
   desc      "SSH key generator utility for bssh (part of bssh project)"
   homepage  "https://github.com/lablup/bssh"
-  version "3.1.3"
   license "Apache-2.0"
 
   on_macos do
