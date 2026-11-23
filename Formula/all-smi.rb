@@ -5,19 +5,19 @@ class AllSmi < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/lablup/all-smi/releases/download/v0.28.0/all-smi-macos-aarch64.zip"
-      sha256 "3d038f059ef9448f7207d32a9b5182a67b036229ade611a0e9f4706a760c03e1"
+      url "https://github.com/lablup/all-smi/releases/download/v0.29.1/all-smi-macos-aarch64.zip"
+      sha256 "31de380489ed511a3017586599222fbc8cb8ba75bac7cfa3656042632810e6b9"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/lablup/all-smi/releases/download/v0.28.0/all-smi-linux-aarch64.tar.gz"
-      sha256 "94310b74fb87787774a05ae63b659fb8b82bbf3aff6af7426b5dd2a39fd653ea"
+      url "https://github.com/lablup/all-smi/releases/download/v0.29.1/all-smi-linux-aarch64.tar.gz"
+      sha256 "42c4a534159f6f02882b65c4ecdd068c6ad314812a62d6e8c392a63dc02918b0"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/lablup/all-smi/releases/download/v0.28.0/all-smi-linux-x86_64.tar.gz"
-      sha256 "67ed42b87ad92b28cf7598ea792eceec3bc4dec24411a27597aa0b59e90fdcce"
+      url "https://github.com/lablup/all-smi/releases/download/v0.29.1/all-smi-linux-x86_64.tar.gz"
+      sha256 "69ab9e474e7eacc861b2fe6958a43e6d24b3593c0c2a0153760ef06317eb73e5"
     end
   end
 
