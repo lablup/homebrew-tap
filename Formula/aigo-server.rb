@@ -7,19 +7,19 @@ class AigoServer < Formula
     depends_on arch: :arm64
     depends_on macos: :sequoia
     if Hardware::CPU.arm?
-      url "https://github.com/lablup/backend.ai-go-releases/releases/download/v2.0.2/aigo-server-macos-aarch64.zip"
-      sha256 "5bef4ca6ebe1a4eec88a16f8a6c597e2175a0d1589f14ba940d6735e0c8c03c6"
+      url "https://github.com/lablup/backend.ai-go-releases/releases/download/v2.0.3/aigo-server-macos-aarch64.zip"
+      sha256 "8b4c6b73e683f4e35400d8504b3385d5fb56f7efac3f1ebfadef00ed870dd427"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/lablup/backend.ai-go-releases/releases/download/v2.0.2/aigo-server-linux-aarch64.tar.gz"
-      sha256 "18a19cbfda8c175035191f787ce357266fa4831eb29a9b08d2c223521ef4de57"
+      url "https://github.com/lablup/backend.ai-go-releases/releases/download/v2.0.3/aigo-server-linux-aarch64.tar.gz"
+      sha256 "10c1e85424d53988b31be3353d462dc8ff6fa9a3fff8e7fcf1b73b39e6371e2f"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/lablup/backend.ai-go-releases/releases/download/v2.0.2/aigo-server-linux-x86_64.tar.gz"
-      sha256 "5604f25b1788d9ad199aa167dc6405862bacf7e6c7471fb03c3c5e3de9d70fe2"
+      url "https://github.com/lablup/backend.ai-go-releases/releases/download/v2.0.3/aigo-server-linux-x86_64.tar.gz"
+      sha256 "fff54e36dbcd4c5e479698f631052f909078d6f8669201f6727807e4360a3089"
     end
   end
 
